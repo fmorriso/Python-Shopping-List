@@ -49,7 +49,7 @@ def main():
     # show what we need to go shopping for, if anything
     display_shopping_list(shopping_list)
 
+
 if __name__ == '__main__':
     print(pantry)
     main()
-
