@@ -19,7 +19,7 @@ def display_shopping_list(missing_items):
         print("It looks like you have everything to make your recipe!")
 
 
-def get_ingredients():
+def get_ingredients() -> list[str]:
     # ask the user for the items in what they want to eat
     recipe = []
     while True:
@@ -27,10 +27,11 @@ def get_ingredients():
         if ingredient.lower() == "done":
             break
         recipe.append(ingredient)
+
     return recipe
 
 
-def get_shopping_list(menu):
+def get_shopping_list(menu: list[str]) -> list[str]:
     shopping_needs = []
     for item in menu:
         if item.lower() not in pantry:
