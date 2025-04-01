@@ -9,22 +9,17 @@ Answer may vary, but students are required to use the following:
 pantry = ["bread", "peanut butter", "pretzels", "chips"]
 
 
-def display_shopping_list(ingredients):
-    shopping_list = []
-    for item in ingredients:
-        if item.lower() not in pantry:
-            shopping_list.append(item)
-
-    if len(shopping_list) > 0:
+def display_shopping_list(missing_items):
+    if len(missing_items) > 0:
         print("You need to go shopping!")
         print("The following ingredients are missing:")
-        for item in shopping_list:
+        for item in missing_items:
             print(item)
     else:
         print("It looks like you have everything to make your recipe!")
 
 
-def main():
+def get_ingredients():
     # ask the user for the items in what they want to eat
     recipe = []
     while True:
@@ -32,10 +27,29 @@ def main():
         if ingredient.lower() == "done":
             break
         recipe.append(ingredient)
+    return recipe
+
+
+def get_shopping_list(menu):
+    shopping_needs = []
+    for item in menu:
+        if item.lower() not in pantry:
+            shopping_needs.append(item)
+
+    return shopping_needs
+
+
+def main():
+    # ask the user for the items in what they want to eat
+    recipe = get_ingredients()
 
     # check the list of items in the recipe against what is in the pantry and show what is missing.
-    display_shopping_list(recipe)
+    shopping_list = get_shopping_list(recipe)
+
+    # show what we need to go shopping for, if anything
+    display_shopping_list(shopping_list)
 
 if __name__ == '__main__':
+    print(pantry)
     main()
 
