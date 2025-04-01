@@ -41,4 +41,16 @@ main.py
 Output
 Docs
 
+## History
+
+| Date       | Description                   |
+|:-----------|:------------------------------|
+| 2025-04-01 | Initial creation              |
+
+
 ## Tools Used
+ | Tool      |  Version |
+ |:----------|---------:|
+ | Python    |   3.13.2 |
+ | VSCode    |   1.98.2 |
+ | PyCharm   | 2024.3.5 |
