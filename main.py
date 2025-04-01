@@ -9,7 +9,7 @@ Answer may vary, but students are required to use the following:
 pantry = ["bread", "peanut butter", "pretzels", "chips"]
 
 
-def display_shopping_list(missing_items):
+def display_shopping_list(missing_items: list[str]) -> None:
     if len(missing_items) > 0:
         print("You need to go shopping!")
         print("The following ingredients are missing:")
