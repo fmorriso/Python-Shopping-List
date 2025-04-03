@@ -11,7 +11,7 @@ pantry = ["bread", "peanut butter", "pretzels", "chips"]
 
 def get_ingredients() -> list[str]:
     """
-    Get a list of ingredients that the user wants to use to prepare a meal.
+    Ask the user for a list of ingredients that the user wants to use to prepare a meal.
     :return: a list of ingredients needed to prepare the meal
     """
     recipe = []
@@ -19,22 +19,23 @@ def get_ingredients() -> list[str]:
         ingredient = input("Please enter an ingredient ('done' when complete): ")
         if ingredient.lower() == "done":
             break
-        recipe.append(ingredient)
+        if ingredient not in recipe:
+            recipe.append(ingredient)
 
     return recipe
 
 
-def get_shopping_list(menu: list[str]) -> list[str]:
+def get_shopping_list(ingredients: list[str]) -> list[str]:
     """
-    Using the supplied menu, check it against the pantry list to see which items are
+    Using the supplied list of ingredients, check it against the pantry list to see which items are
     not in the pantry and need to be added to a shopping list.
-    :param menu:
-    :return:
+    :param ingredients: the list of ingredients to check against the pantry list
+    :return: a list of items not in the pantry list
     """
-    shopping_needs = []
-    for item in menu:
-        if item.lower() not in pantry:
-            shopping_needs.append(item)
+    shopping_needs: list[str] = []
+    for ingredient in ingredients:
+        if ingredient.lower() not in pantry:
+            shopping_needs.append(ingredient)
 
     return shopping_needs
 
@@ -50,8 +51,6 @@ def display_shopping_list(missing_items: list[str]) -> None:
         print("The following ingredients are missing:")
         for item in missing_items:
             print(item)
-    elif len(missing_items) == 0:
-        print('You did not enter any ingredients.')
     else:
         print("It looks like you have everything to make your recipe!")
 
