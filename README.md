@@ -43,9 +43,10 @@ Docs
 
 ## History
 
-| Date       | Description                   |
-|:-----------|:------------------------------|
-| 2025-04-01 | Initial creation              |
+| Date       | Description                                          |
+|:-----------|:-----------------------------------------------------|
+| 2025-04-01 | Initial creation                                     |
+| 2025-04-03 | Handle scenario where user enters 'done' immediately |
 
 
 ## Tools Used
