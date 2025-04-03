@@ -1,12 +1,12 @@
-'''
+"""
 Answer may vary, but students are required to use the following:
 1. A pantry list
 2. User input into an ingredient list
 3. Pass the ingredient list to a method
 4. Use a conditional and loop in the method
-'''
+"""
 
-pantry = ["bread", "peanut butter", "pretzels", "chips"]
+pantry = ['bread', 'peanut butter', 'pretzels', 'chips']
 
 
 def get_ingredients() -> list[str]:
